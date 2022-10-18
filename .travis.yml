@@ -12,9 +12,9 @@ after_script:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: ${{ secrets.ACCESS_KEY_ID }}
+  access_key_id: $ACCESS_KEY_ID
   secret_access_key:
-    secure: ${{ secrets.SECRET_KEY }}
+    secure: $SECRET_KEY
   region: us-west-2
   app: django-tutorial
   env: django-env
