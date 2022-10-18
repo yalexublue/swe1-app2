@@ -20,5 +20,5 @@ deploy:
   env: django-env
   bucket_name: elasticbeanstalk-us-west-2-832394055959
   on:
-    repo: yalexublue/swe1_app2
+    repo: yalexublue/swe1-app2
     branch: main
