@@ -8,6 +8,7 @@ install:
 
 script:
    - coverage run --source="." manage.py test
+   
 after_script:
    - coveralls
 
