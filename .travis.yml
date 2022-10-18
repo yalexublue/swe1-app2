@@ -10,9 +10,10 @@ script:
    - coverage run --source="." manage.py test
 
 after_script:
+   - black --check .
+   - flake8 .
    - coveralls
-
-
+   
 deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESS_KEY_ID
