@@ -1,5 +1,15 @@
 language: python
 python:
    - 3.7
-install:
-   - pip install -r requirements.txt
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIA4DTUNKEL6DVY3H7C
+  secret_access_key:
+    secure: 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
+  region: us-west-2
+  app: django-tutorial
+  env: django-env
+  bucket_name: elasticbeanstalk-us-west-2-832394055959
+  on:
+    repo: yalexublue/swe1_app2
+    branch: main
