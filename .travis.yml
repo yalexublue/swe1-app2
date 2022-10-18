@@ -16,5 +16,7 @@ deploy:
     repo: yalexublue/swe1_app2
     branch: main
 script:
+   - flake8 .
    - black --check .
+   
 
