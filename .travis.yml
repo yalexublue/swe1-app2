@@ -4,6 +4,12 @@ python:
 install:
    - pip install importlib-metadata==4.12
    - pip install -r requirements.txt
+
+script:
+   - coverage run --source="." manage.py test
+after_script:
+   - coveralls
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: ${{ secrets.ACCESS_KEY_ID }}
@@ -16,9 +22,3 @@ deploy:
   on:
     repo: yalexublue/swe1_app2
     branch: main
-script:
-   - flake8 .
-   - black --check .
-   - coverage run --source="." manage.py test
-after_script:
-   - coveralls
