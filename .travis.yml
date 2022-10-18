@@ -5,3 +5,16 @@ install:
    - pip install -r requirements.txt
 script:
    - black --check .
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: ${{ secrets.ACCESS_KEY_ID }}
+  secret_access_key:
+    secure: ${{ secrets.SECRET_KEY }}
+  region: us-west-2
+  app: django-tutorial
+  env: django-env
+  bucket_name: elasticbeanstalk-us-west-2-832394055959
+  on:
+    repo: yalexublue/swe1_app2
+    branch: main
