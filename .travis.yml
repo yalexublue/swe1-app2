@@ -18,5 +18,6 @@ deploy:
 script:
    - flake8 .
    - black --check .
+   - coverage run --source=ebdjango,polls manage.py test
    
 
